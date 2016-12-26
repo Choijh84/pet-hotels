@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Pet Hotels-->
+        <scene sceneID="Mgw-Af-i6H">
+            <objects>
+                <tableViewController id="Cl8-P8-uRa" customClass="HotelTableViewController" customModule="ParseStarterProject_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="170" sectionHeaderHeight="28" sectionFooterHeight="28" id="bf5-w4-gQv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="170" id="LAm-QK-B2h" customClass="HotelTableViewCell" customModule="ParseStarterProject_Swift" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="170"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LAm-QK-B2h" id="d41-VP-CUe">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="169"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pethotel3" translatesAutoresizingMaskIntoConstraints="NO" id="3iP-he-Xp6">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="128"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CWa-ON-Zdk">
+                                            <rect key="frame" x="8" y="136" width="145" height="22"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IyU-K0-JHa">
+                                            <rect key="frame" x="236" y="136" width="131" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="hotelAddress" destination="IyU-K0-JHa" id="Ce1-8f-0Hp"/>
+                                    <outlet property="hotelName" destination="CWa-ON-Zdk" id="PXp-Bk-jsc"/>
+                                    <outlet property="hotelPhoto" destination="3iP-he-Xp6" id="0OW-sX-8zc"/>
+                                    <segue destination="CQ6-4n-geR" kind="show" identifier="ShowHotelDetails" id="13Z-jt-rkl"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Cl8-P8-uRa" id="BsY-yU-pKw"/>
+                            <outlet property="delegate" destination="Cl8-P8-uRa" id="mqA-3q-2Oq"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Pet Hotels" id="Tah-Dn-eMy">
+                        <barButtonItem key="rightBarButtonItem" title="Logout" id="Zs6-Oe-nIc">
+                            <connections>
+                                <action selector="logout:" destination="Cl8-P8-uRa" id="Ydl-Ls-BHn"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="logoutSegue" id="woA-gZ-GT9"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jL8-zT-gnP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="942" y="-581"/>
+        </scene>
+        <!--Pet Hotel Details-->
+        <scene sceneID="qt9-7P-pbL">
+            <objects>
+                <tableViewController storyboardIdentifier="HotelDetailVC" id="CQ6-4n-geR" customClass="HotelDetailVC" customModule="ParseStarterProject_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="bI9-EZ-dsp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RoomCategory" rowHeight="300" id="aAx-a8-JfI" customClass="RoomCell" customModule="ParseStarterProject_Swift" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="300"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aAx-a8-JfI" id="8cm-p9-JO5">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="299"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" bounces="NO" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="EWF-ri-IF4">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="299"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="l3n-UC-iBt">
+                                                <size key="itemSize" width="375" height="285"/>
+                                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            </collectionViewFlowLayout>
+                                            <cells>
+                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RoomCell" id="cCN-cC-uzy" customClass="RoomCollectionViewCell" customModule="ParseStarterProject_Swift" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="7" width="375" height="285"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="285"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="roomType" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="egj-0N-oFF">
+                                                                <rect key="frame" x="18" y="8" width="180" height="21"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="180" id="Wco-3k-H6x"/>
+                                                                    <constraint firstAttribute="height" constant="21" id="mB9-LK-eL4"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pethotelthumb" translatesAutoresizingMaskIntoConstraints="NO" id="0nD-jY-5DP">
+                                                                <rect key="frame" x="0.0" y="34" width="375" height="200"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="200" id="9zN-R1-cyj"/>
+                                                                    <constraint firstAttribute="width" constant="375" id="CY5-EL-YeR"/>
+                                                                </constraints>
+                                                            </imageView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="roomPrice" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h76-FB-qSM">
+                                                                <rect key="frame" x="247" y="244" width="120" height="21"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="120" id="hk1-jE-sPW"/>
+                                                                    <constraint firstAttribute="height" constant="21" id="uL8-wc-zeL"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="roomTerm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4cW-aO-QLg">
+                                                                <rect key="frame" x="8" y="244" width="140" height="21"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="21" id="GEi-LR-1Ky"/>
+                                                                    <constraint firstAttribute="width" constant="140" id="mMp-BG-4MW"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </view>
+                                                    <constraints>
+                                                        <constraint firstItem="0nD-jY-5DP" firstAttribute="top" secondItem="egj-0N-oFF" secondAttribute="bottom" constant="5" id="350-Gd-5ov"/>
+                                                        <constraint firstItem="4cW-aO-QLg" firstAttribute="leading" secondItem="cCN-cC-uzy" secondAttribute="leadingMargin" id="QWr-4I-vci"/>
+                                                        <constraint firstItem="h76-FB-qSM" firstAttribute="trailing" secondItem="cCN-cC-uzy" secondAttribute="trailingMargin" id="UoE-As-T0q"/>
+                                                        <constraint firstItem="4cW-aO-QLg" firstAttribute="top" secondItem="0nD-jY-5DP" secondAttribute="bottom" constant="10" id="Vap-Ej-4RM"/>
+                                                        <constraint firstItem="egj-0N-oFF" firstAttribute="leading" secondItem="cCN-cC-uzy" secondAttribute="leadingMargin" constant="10" id="YWA-uE-nmH"/>
+                                                        <constraint firstItem="h76-FB-qSM" firstAttribute="top" secondItem="0nD-jY-5DP" secondAttribute="bottom" constant="10" id="fl7-Mh-ZK3"/>
+                                                        <constraint firstItem="egj-0N-oFF" firstAttribute="top" secondItem="cCN-cC-uzy" secondAttribute="topMargin" id="qFk-a8-cPR"/>
+                                                        <constraint firstItem="0nD-jY-5DP" firstAttribute="leading" secondItem="cCN-cC-uzy" secondAttribute="leading" id="zSO-78-KO8"/>
+                                                        <constraint firstAttribute="trailing" secondItem="0nD-jY-5DP" secondAttribute="trailing" id="zoT-qS-se5"/>
+                                                    </constraints>
+                                                    <connections>
+                                                        <outlet property="roomImage" destination="0nD-jY-5DP" id="QtX-c3-u9h"/>
+                                                        <outlet property="roomPrice" destination="h76-FB-qSM" id="uFt-7Z-mBV"/>
+                                                        <outlet property="roomTerm" destination="4cW-aO-QLg" id="aEm-cu-noo"/>
+                                                        <outlet property="roomType" destination="egj-0N-oFF" id="d71-HK-uQy"/>
+                                                    </connections>
+                                                </collectionViewCell>
+                                            </cells>
+                                            <connections>
+                                                <outlet property="dataSource" destination="aAx-a8-JfI" id="82H-0c-fBB"/>
+                                                <outlet property="delegate" destination="aAx-a8-JfI" id="rSY-gT-yvs"/>
+                                            </connections>
+                                        </collectionView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="EWF-ri-IF4" secondAttribute="bottom" id="7Jj-Jo-5Fs"/>
+                                        <constraint firstItem="EWF-ri-IF4" firstAttribute="top" secondItem="8cm-p9-JO5" secondAttribute="top" id="C4d-1e-ilo"/>
+                                        <constraint firstItem="EWF-ri-IF4" firstAttribute="leading" secondItem="8cm-p9-JO5" secondAttribute="leading" id="Gsy-lD-fdc"/>
+                                        <constraint firstAttribute="trailing" secondItem="EWF-ri-IF4" secondAttribute="trailing" id="dKg-nF-Y9E"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HeaderCell" rowHeight="270" id="ZNq-BL-Gqi" customClass="HeaderCell" customModule="ParseStarterProject_Swift" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="328" width="375" height="270"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZNq-BL-Gqi" id="bdn-Kw-dnT">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="269"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pethotel5" translatesAutoresizingMaskIntoConstraints="NO" id="DuK-Ic-akx">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="200" id="vfo-FS-eCY"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OPU-W1-FId">
+                                            <rect key="frame" x="8" y="208" width="150" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="ECW-yj-Top"/>
+                                                <constraint firstAttribute="width" constant="150" id="yKg-ZI-Urr"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vYe-5L-HMp">
+                                            <rect key="frame" x="8" y="243" width="200" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DlD-BR-Imq">
+                                            <rect key="frame" x="257" y="243" width="110" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="OPU-W1-FId" firstAttribute="top" secondItem="DuK-Ic-akx" secondAttribute="bottom" constant="8" id="2TZ-Gw-ihg"/>
+                                        <constraint firstAttribute="trailing" secondItem="DuK-Ic-akx" secondAttribute="trailing" id="Qcg-xP-sqm"/>
+                                        <constraint firstItem="OPU-W1-FId" firstAttribute="leading" secondItem="bdn-Kw-dnT" secondAttribute="leadingMargin" id="bXo-DH-B4F"/>
+                                        <constraint firstItem="DuK-Ic-akx" firstAttribute="top" secondItem="bdn-Kw-dnT" secondAttribute="top" id="d28-92-LRG"/>
+                                        <constraint firstItem="DuK-Ic-akx" firstAttribute="leading" secondItem="bdn-Kw-dnT" secondAttribute="leading" id="rta-ql-xTt"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="coverImageView" destination="DuK-Ic-akx" id="mLs-GE-K6u"/>
+                                    <outlet property="hotelAddress" destination="vYe-5L-HMp" id="tKY-c7-vvh"/>
+                                    <outlet property="hotelName" destination="OPU-W1-FId" id="kI7-to-M6d"/>
+                                    <outlet property="hotelPrice" destination="DlD-BR-Imq" id="1Ni-9t-Cat"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="CQ6-4n-geR" id="8tX-6I-Wcw"/>
+                            <outlet property="delegate" destination="CQ6-4n-geR" id="y8b-8Y-4DU"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Pet Hotel Details" id="Vck-6S-YlG"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ra0-MI-oPg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1724" y="-581.55922038980509"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="E7p-Sv-Wyz">
+            <objects>
+                <navigationController id="yfI-qV-fhv" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="f5x-cd-hR1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Cl8-P8-uRa" kind="relationship" relationship="rootViewController" id="o2V-YP-5na"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Yl-6z-6UC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="140" y="-579"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ParseStarterProject_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome to Pet Hotels" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7As-ab-rCB">
+                                <rect key="frame" x="100" y="61" width="175" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter your email and password below" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rYA-Fx-Mgu">
+                                <rect key="frame" x="45" y="104" width="285" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="test@naver.com" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Apa-3j-zkz">
+                                <rect key="frame" x="45" y="184" width="285" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="testpassword" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iR9-TO-7Sd">
+                                <rect key="frame" x="45" y="244" width="285" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CUd-es-JSB">
+                                <rect key="frame" x="254" y="382" width="76" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Log In"/>
+                                <connections>
+                                    <action selector="changeSignupMode:" destination="BYZ-38-t0r" eventType="touchUpInside" id="X8Y-RC-Uq1"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Already Have an Account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7f2-Bd-yHz">
+                                <rect key="frame" x="45" y="387" width="201" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G9Y-lz-Kh1">
+                                <rect key="frame" x="160" y="318" width="55" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Sign Up"/>
+                                <connections>
+                                    <action selector="signupOrLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JXk-de-SWE"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <connections>
+                        <outlet property="changeSignupMode" destination="CUd-es-JSB" id="ECB-7V-fxb"/>
+                        <outlet property="emailTextField" destination="Apa-3j-zkz" id="dpm-po-F2a"/>
+                        <outlet property="messageLabel" destination="7f2-Bd-yHz" id="Wcd-Fd-wYZ"/>
+                        <outlet property="passwordTextField" destination="iR9-TO-7Sd" id="6Ql-EU-TGM"/>
+                        <outlet property="signUpOrLogIn" destination="G9Y-lz-Kh1" id="JxB-8i-4d8"/>
+                        <segue destination="yfI-qV-fhv" kind="show" identifier="showHotelTable" id="afE-xd-hwV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="140" y="137.18140929535232"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="pethotel3" width="420" height="316"/>
+        <image name="pethotel5" width="990" height="522"/>
+        <image name="pethotelthumb" width="370" height="246"/>
+    </resources>
+</document>
