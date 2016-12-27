@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -83,14 +83,84 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HotelFacilityService" rowHeight="80" id="ttn-0H-xgu" customClass="HotelFacilityServiceCell" customModule="ParseStarterProject_Swift" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="80"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ttn-0H-xgu" id="e29-VF-5yy">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="79"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" bounces="NO" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="GLr-dy-S5c">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Fqp-5U-WcS">
+                                                <size key="itemSize" width="374" height="82"/>
+                                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            </collectionViewFlowLayout>
+                                            <cells>
+                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HotelFacilityServiceCell" id="lX9-3Z-WHH" customClass="HotelFacilityServiceCollectionViewCell" customModule="ParseStarterProject_Swift" customModuleProvider="target">
+                                                    <rect key="frame" x="0.5" y="0.0" width="374" height="82"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="82"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <subviews>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CCTV" translatesAutoresizingMaskIntoConstraints="NO" id="uv1-F1-l2Y">
+                                                                <rect key="frame" x="8" y="11" width="60" height="60"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="60" id="ZSi-Oe-vQg"/>
+                                                                    <constraint firstAttribute="width" constant="60" id="c7a-O6-pQn"/>
+                                                                </constraints>
+                                                            </imageView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CCTV" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tb3-dB-Zht">
+                                                                <rect key="frame" x="78" y="30.5" width="296" height="21"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="21" id="xRb-lG-QN9"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
+                                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </view>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="tb3-dB-Zht" secondAttribute="trailing" id="Htq-qx-9Qf"/>
+                                                        <constraint firstItem="uv1-F1-l2Y" firstAttribute="centerY" secondItem="lX9-3Z-WHH" secondAttribute="centerY" id="VeT-rf-ig0"/>
+                                                        <constraint firstItem="tb3-dB-Zht" firstAttribute="leading" secondItem="uv1-F1-l2Y" secondAttribute="trailing" constant="10" id="oex-1y-AqZ"/>
+                                                        <constraint firstItem="uv1-F1-l2Y" firstAttribute="leading" secondItem="lX9-3Z-WHH" secondAttribute="leadingMargin" id="ygz-XD-cfa"/>
+                                                        <constraint firstItem="tb3-dB-Zht" firstAttribute="centerY" secondItem="uv1-F1-l2Y" secondAttribute="centerY" id="zBv-wV-UjH"/>
+                                                    </constraints>
+                                                    <size key="customSize" width="374" height="82"/>
+                                                    <connections>
+                                                        <outlet property="FaciltyServiceIcon" destination="uv1-F1-l2Y" id="0cC-UC-six"/>
+                                                        <outlet property="FaciltyServiceLabel" destination="tb3-dB-Zht" id="z0C-3h-BPh"/>
+                                                    </connections>
+                                                </collectionViewCell>
+                                            </cells>
+                                            <connections>
+                                                <outlet property="dataSource" destination="ttn-0H-xgu" id="d7k-vY-TOR"/>
+                                                <outlet property="delegate" destination="ttn-0H-xgu" id="Dpc-9M-c9W"/>
+                                            </connections>
+                                        </collectionView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="GLr-dy-S5c" secondAttribute="trailing" id="7Jv-ZI-cgj"/>
+                                        <constraint firstItem="GLr-dy-S5c" firstAttribute="leading" secondItem="e29-VF-5yy" secondAttribute="leading" id="lqc-MG-vdy"/>
+                                        <constraint firstAttribute="bottom" secondItem="GLr-dy-S5c" secondAttribute="bottom" id="rqo-GW-jVl"/>
+                                        <constraint firstItem="GLr-dy-S5c" firstAttribute="top" secondItem="e29-VF-5yy" secondAttribute="top" id="z52-Rn-Uqi"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RoomCategory" rowHeight="300" id="aAx-a8-JfI" customClass="RoomCell" customModule="ParseStarterProject_Swift" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="300"/>
+                                <rect key="frame" x="0.0" y="108" width="375" height="300"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aAx-a8-JfI" id="8cm-p9-JO5">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="299"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" bounces="NO" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="EWF-ri-IF4">
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" bounces="NO" alwaysBounceVertical="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="EWF-ri-IF4">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="299"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="l3n-UC-iBt">
@@ -117,13 +187,6 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pethotelthumb" translatesAutoresizingMaskIntoConstraints="NO" id="0nD-jY-5DP">
-                                                                <rect key="frame" x="0.0" y="34" width="375" height="200"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="200" id="9zN-R1-cyj"/>
-                                                                    <constraint firstAttribute="width" constant="375" id="CY5-EL-YeR"/>
-                                                                </constraints>
-                                                            </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="roomPrice" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h76-FB-qSM">
                                                                 <rect key="frame" x="247" y="244" width="120" height="21"/>
                                                                 <constraints>
@@ -144,6 +207,12 @@
                                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pethotelthumb" translatesAutoresizingMaskIntoConstraints="NO" id="0nD-jY-5DP">
+                                                                <rect key="frame" x="0.0" y="34" width="375" height="200"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="200" id="9zN-R1-cyj"/>
+                                                                </constraints>
+                                                            </imageView>
                                                         </subviews>
                                                     </view>
                                                     <constraints>
@@ -180,7 +249,7 @@
                                 </tableViewCellContentView>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HeaderCell" rowHeight="270" id="ZNq-BL-Gqi" customClass="HeaderCell" customModule="ParseStarterProject_Swift" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="328" width="375" height="270"/>
+                                <rect key="frame" x="0.0" y="408" width="375" height="270"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZNq-BL-Gqi" id="bdn-Kw-dnT">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="269"/>
@@ -341,6 +410,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="CCTV" width="50" height="50"/>
         <image name="pethotel3" width="420" height="316"/>
         <image name="pethotel5" width="990" height="522"/>
         <image name="pethotelthumb" width="370" height="246"/>

@@ -18,6 +18,8 @@
 		81BA817B1A49E0E500E65899 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BA817A1A49E0E500E65899 /* SystemConfiguration.framework */; };
 		81BA817F1A49E0F000E65899 /* libstdc++.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BA817E1A49E0F000E65899 /* libstdc++.6.dylib */; };
 		BED119BD1E0D865D000CE670 /* Hotel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED119BC1E0D865D000CE670 /* Hotel.swift */; };
+		BEFD48701E1222FC0027CDE8 /* HotelFacilityServiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFD486F1E1222FC0027CDE8 /* HotelFacilityServiceCell.swift */; };
+		BEFD48721E1229CC0027CDE8 /* HotelFacilityServiceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFD48711E1229CC0027CDE8 /* HotelFacilityServiceCollectionViewCell.swift */; };
 		EB0DF4D01E101D5F00B17D1D /* Rooms.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0DF4CF1E101D5F00B17D1D /* Rooms.swift */; };
 		EB0DF4D21E101F6100B17D1D /* HotelFacilityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0DF4D11E101F6000B17D1D /* HotelFacilityService.swift */; };
 		EB0DF4D41E101F6C00B17D1D /* HotelReferenceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0DF4D31E101F6C00B17D1D /* HotelReferenceInfo.swift */; };
@@ -46,6 +48,8 @@
 		81BA817E1A49E0F000E65899 /* libstdc++.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.dylib"; path = "usr/lib/libstdc++.6.dylib"; sourceTree = SDKROOT; };
 		81BA81801A49E10C00E65899 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 		BED119BC1E0D865D000CE670 /* Hotel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hotel.swift; sourceTree = "<group>"; };
+		BEFD486F1E1222FC0027CDE8 /* HotelFacilityServiceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotelFacilityServiceCell.swift; sourceTree = "<group>"; };
+		BEFD48711E1229CC0027CDE8 /* HotelFacilityServiceCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotelFacilityServiceCollectionViewCell.swift; sourceTree = "<group>"; };
 		EB0DF4CF1E101D5F00B17D1D /* Rooms.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rooms.swift; sourceTree = "<group>"; };
 		EB0DF4D11E101F6000B17D1D /* HotelFacilityService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotelFacilityService.swift; sourceTree = "<group>"; };
 		EB0DF4D31E101F6C00B17D1D /* HotelReferenceInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HotelReferenceInfo.swift; sourceTree = "<group>"; };
@@ -166,6 +170,8 @@
 				EB7AE55E1E10CA5A0067B115 /* HeaderCell.swift */,
 				EB7AE5621E10EA3D0067B115 /* RoomCell.swift */,
 				EB7AE5641E10F8400067B115 /* RoomCollectionViewCell.swift */,
+				BEFD486F1E1222FC0027CDE8 /* HotelFacilityServiceCell.swift */,
+				BEFD48711E1229CC0027CDE8 /* HotelFacilityServiceCollectionViewCell.swift */,
 				EB7AE5681E11083A0067B115 /* HotelInfo.swift */,
 			);
 			name = Controller;
@@ -243,9 +249,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEFD48721E1229CC0027CDE8 /* HotelFacilityServiceCollectionViewCell.swift in Sources */,
 				EB0DF4D21E101F6100B17D1D /* HotelFacilityService.swift in Sources */,
 				EB0DF4D61E10295A00B17D1D /* HotelDetailVC.swift in Sources */,
 				EB7AE5691E11083A0067B115 /* HotelInfo.swift in Sources */,
+				BEFD48701E1222FC0027CDE8 /* HotelFacilityServiceCell.swift in Sources */,
 				81BA814D1A49DA1800E65899 /* ViewController.swift in Sources */,
 				EB0DF4D41E101F6C00B17D1D /* HotelReferenceInfo.swift in Sources */,
 				EBC8BD791E0D631700338EF9 /* HotelTableViewController.swift in Sources */,

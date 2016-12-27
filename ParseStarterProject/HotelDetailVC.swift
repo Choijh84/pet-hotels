@@ -17,6 +17,9 @@ class HotelDetailVC: UITableViewController {
     
     var selectedHotel = Hotel(name: "", phone: "")
     var roomList = [Rooms]()
+    var FacilityService = HotelFacilityService()
+    var FacilityServiceDic = [String: Bool]()
+    var ServiceName = [""]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,13 +49,89 @@ class HotelDetailVC: UITableViewController {
             
             return cell
             
-        } else {
+        } else if (indexPath.row == 1) {
             let cell = tableView.dequeueReusableCell(withIdentifier: "RoomCategory", for: indexPath) as! RoomCell
             
             self.getRoomList()
             cell.roomList = roomList
             
             return cell
+        } else if (indexPath.row == 2) {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "HotelFacilityService", for: indexPath) as! HotelFacilityServiceCell
+            
+            self.getFacilityServiceList()
+            self.mapObjectToDictionary()
+            self.returnValue()
+            
+            cell.ServiceName = ServiceName
+            print("WE got \(ServiceName.count) Service List")
+            
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "HotelFacilityService", for: indexPath) as! HotelFacilityServiceCell
+            
+            return cell
+        }
+    }
+    
+    func returnValue() {
+        
+        ServiceName.removeAll()
+        for (area, value) in FacilityServiceDic {
+            if value == true {
+                ServiceName.append(area)
+            }
+        }
+        print(ServiceName)
+    }
+    
+    func mapObjectToDictionary() {
+        if FacilityService.allDay == true {
+            FacilityServiceDic["allDay"] = true
+        }
+        if FacilityService.bath == true {
+            FacilityServiceDic["bath"] = true
+        }
+        if FacilityService.CCTV == true {
+            FacilityServiceDic["CCTV"] = true
+        }
+        if FacilityService.dailyCleaning == true {
+            FacilityServiceDic["dailyCleaning"] = true
+        }
+        if FacilityService.nightDoctor == true {
+            FacilityServiceDic["nightDoctor"] = true
+        }
+        if FacilityService.organicFeed == true {
+            FacilityServiceDic["organicFeed"] = true
+        }
+        if FacilityService.parking == true {
+            FacilityServiceDic["parking"] = true
+        }
+        if FacilityService.photoReport == true {
+            FacilityServiceDic["photoReport"] = true
+        }
+        if FacilityService.walking == true {
+            FacilityServiceDic["walking"] = true
+        }
+        print(FacilityServiceDic)
+    }
+    
+    func getFacilityServiceList() {
+        
+        let innerQuery = PFQuery(className: "Hotels")
+        innerQuery.whereKey("name", equalTo: selectedHotel.name)
+        
+        let query = PFQuery(className: "HotelFacilityService")
+        query.whereKey("hotel", matchesQuery: innerQuery)
+        
+        do {
+            let objects = try query.findObjects()
+            for object in objects {
+                print("This is Faciliry Service List Object Id: \(object.objectId)")
+                self.FacilityService = HotelFacilityService(obj: object)
+            }
+        } catch {
+            print(error)
         }
     }
     
@@ -68,7 +147,7 @@ class HotelDetailVC: UITableViewController {
         do {
             let objects = try query.findObjects()
             for object in objects {
-                print(object.objectId!)
+                print("This is Hotel Room List Object Id: \(object.objectId)")
                 self.roomList.append(Rooms(obj: object))
             }
         } catch {
