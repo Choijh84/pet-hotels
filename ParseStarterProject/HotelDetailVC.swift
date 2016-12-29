@@ -13,9 +13,9 @@ import Parse
 class HotelDetailVC: UITableViewController {
     
     // It's the header of the sections. The first empty section header is use for header.
-    let header = ["Hotel_Detail", "Rooms", "Info"]
+    let header = ["Hotel_Detail", "Rooms", "Info1", "Info2", "Map"]
     
-    var selectedHotel = Hotel(name: "", phone: "")
+    var selectedHotel = Hotel()
     var roomList = [Rooms]()
     var FacilityService = HotelFacilityService()
     var FacilityServiceDic = [String: Bool]()
@@ -57,6 +57,10 @@ class HotelDetailVC: UITableViewController {
             
             return cell
         } else if (indexPath.row == 2) {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "InfoCell", for: indexPath) as! InfoCell
+            
+            return cell
+        } else if (indexPath.row == 3) {
             let cell = tableView.dequeueReusableCell(withIdentifier: "HotelFacilityService", for: indexPath) as! HotelFacilityServiceCell
             
             self.getFacilityServiceList()
@@ -67,11 +71,27 @@ class HotelDetailVC: UITableViewController {
             print("WE got \(ServiceName.count) Service List")
             
             return cell
+        } else if (indexPath.row == 4) {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "mapCell", for: indexPath) as! HotalMapTableViewCell
+            
+            cell.addressLabel.text = selectedHotel.address
+            self.configureMapCell(cell)
+            
+            return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "HotelFacilityService", for: indexPath) as! HotelFacilityServiceCell
             
             return cell
         }
+    }
+    
+    /**
+     Configures the map cell
+     
+     - parameter cell: cell to configure
+     */
+    func configureMapCell(_ cell: HotalMapTableViewCell) {
+        cell.zoomMaptoHotelLocation(selectedHotel)
     }
     
     func returnValue() {
@@ -160,7 +180,22 @@ class HotelDetailVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 300
+        if (indexPath.row == 0) {
+            return 300
+        } else if (indexPath.row == 1) {
+            return 320
+        } else if (indexPath.row == 2) {
+            return 40
+        } else if (indexPath.row == 3) {
+            let temp = ServiceName.count * 77
+            let result = Double(temp/2) - 0.5
+            print("This is the result: \(result) and \(UInt(result))")
+            return CGFloat(UInt(result))
+        } else if (indexPath.row == 4) {
+            return 170
+        } else {
+            return 300
+        }
     }
     
 }

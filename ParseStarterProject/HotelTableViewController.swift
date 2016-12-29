@@ -10,13 +10,24 @@ import UIKit
 import Parse
 
 class HotelTableViewCell: UITableViewCell {
+    // Background view of the Hotel Image
     @IBOutlet weak var hotelPhoto: UIImageView!
+    // the hotel name label
     @IBOutlet weak var hotelName: UILabel!
+    // the hotel address label
     @IBOutlet weak var hotelAddress: UILabel!
+    // the hotel category label, this hotel belong to
+    @IBOutlet weak var hotelCategory: UILabel!
+    // Background view of the distance Label
+    @IBOutlet weak var distanceLabelBackgroundView: UIView!
+    // Label to display the distance of the Hotel from the user
+    @IBOutlet weak var distanceLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization Code
+        distanceLabelBackgroundView.layer.cornerRadius = 6.0
+        distanceLabelBackgroundView.backgroundColor = .white
+        distanceLabel.textColor = UIColor.globalTintColor()
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -50,7 +61,7 @@ class HotelTableViewController: UITableViewController {
                 // Do Sth with the found objects
                 if let objects = objects {
                     for object in objects {
-                        // print(object["name"])
+                        print("Hotel's name is \(object["name"])")
                         self.hotels?.append(Hotel(obj: object))
                     }
                 }

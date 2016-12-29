@@ -12,6 +12,10 @@ import Parse
 
 class ViewController: UIViewController {
 
+    @IBAction func logOut() {
+    
+    }
+    
     var signUpMode = true
     var activityIndicator = UIActivityIndicatorView()
     

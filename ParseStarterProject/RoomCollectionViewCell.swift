@@ -15,5 +15,5 @@ class RoomCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var roomTerm: UILabel!
     @IBOutlet weak var roomPrice: UILabel!
     
-    
+    @IBOutlet weak var bookingButton: UIButton!
 }
